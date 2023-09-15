@@ -35,14 +35,6 @@ const Home = () => {
         })
     }
 
-    // const remainingCreditError = () => {
-    //     Swal.fire({
-    //         title: 'Error!',
-    //         text: "Your total credit is going to be less than 0",
-    //         icon: 'error',
-    //         confirmButtonText: 'Cancel'
-    //     })
-    // }
 
     const handleSelectCourse = (course) => {
         let creditCount = course.duration_hours;
