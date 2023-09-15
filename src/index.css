@@ -17,3 +17,9 @@ body{
   background-color: var(--body-background);
   padding: 4rem 0px;
 }
+
+@media screen and (max-width: 769px) {
+  body{
+    padding: 4rem 2rem;
+  }
+}
