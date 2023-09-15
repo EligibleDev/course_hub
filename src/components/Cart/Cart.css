@@ -10,6 +10,11 @@
     width: 21.5%;
     position: sticky;
     top: 1.5rem;
+    box-shadow: 0px 0px 25px rgba(128, 128, 128, 0.544);
+}
+
+.cart:hover {
+    transition: 0.3s;
 }
 
 .credit {
@@ -35,6 +40,10 @@ ol.course-list {
     color: var(--secondary-color);
     font-size: 1rem;
     font-weight: 400;
+}
+
+ol.course-list > li {
+    margin-top: 0.5rem;
 }
 
 p.cart-info {

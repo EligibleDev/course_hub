@@ -3,9 +3,11 @@ import { FiDollarSign } from 'react-icons/fi';
 import { BsBook } from 'react-icons/bs';
 import { useEffect, useState } from 'react';
 import Cart from '../Cart/Cart';
+import Swal from 'sweetalert2';
 
 const Home = () => {
-    const [allCourses, setAllCourses] = useState([])
+    const [allCourses, setAllCourses] = useState([]);
+    const [selectedCourses, setSelectedCourses] = useState([]);
 
     useEffect(() => {
         fetch('./data.json')
@@ -13,7 +15,24 @@ const Home = () => {
             .then(data => setAllCourses(data));
     }, [])
 
-    console.log(allCourses);
+    const doublePurchaseError = () => {
+        Swal.fire({
+            title: 'Error!',
+            text: "You've alreaty purchased this course",
+            icon: 'error',
+            confirmButtonText: 'Cancel'
+        })
+    }
+
+    const handleSelectCourse = (course) => {
+        const doesExist = selectedCourses.find(item => item.id === course.id);
+        doesExist
+            ? doublePurchaseError()
+            : setSelectedCourses([...selectedCourses, course]);
+        console.log(doesExist);
+
+    }
+
 
     return (
         <div className='main'>
@@ -37,12 +56,12 @@ const Home = () => {
                             </div>
                         </div>
 
-                        <button className='select'>Select</button>
+                        <button onClick={() => handleSelectCourse(course)} className='select'>Purchase</button>
                     </div>)
                 }
             </div>
 
-            <Cart></Cart>
+            <Cart selectedCourses={selectedCourses}></Cart>
         </div>
     );
 };
