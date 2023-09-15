@@ -1,20 +1,23 @@
 [
     {
         "title": "Web Development Bootcamp",
+        "id": 1,
         "description": "Learn web development from scratch. Build real-world projects and kickstart your web development journey.",
         "price": 199.99,
         "duration_hours": 7,
         "img": "https://i.ibb.co/LPqkyZk/img1.png"
     },
     {
-        "title": "Digital Marketing Essentials",
+        "title": "Data Structure & Algorithm",
+        "id": 2,
         "description": "Master digital marketing with SEO, social media, and analytics. Boost your online presence and grow your business.",
         "price": 149.99,
         "duration_hours": 3,
         "img": "https://i.ibb.co/drC1T48/img2.png"
     },
     {
-        "title": "Python Programming Fundamentals",
+        "title": "C Programming",
+        "id": 3,
         "description": "Begin Python programming. Learn syntax, data structures, and start coding to solve real-world problems.",
         "price": 99.99,
         "duration_hours": 9,
@@ -22,13 +25,15 @@
     },
     {
         "title": "Data Science with R",
+        "id": 4,
         "description": "Unlock data science with R. Dive into data analysis, visualization, and machine learning for insights.",
         "price": 179.99,
         "duration_hours": 5,
         "img": "https://i.ibb.co/9pLSsbC/img4.png"
     },
     {
-        "title": "Graphic Design for Beginners",
+        "title": "Python Programming",
+        "id": 5,
         "description": "Create stunning visuals with design principles, tools, and techniques. Bring creative ideas to life.",
         "price": 129.99,
         "duration_hours": 2,
@@ -36,6 +41,7 @@
     },
     {
         "title": "Photography Masterclass",
+        "id": 6,
         "description": "Capture moments like a pro photographer. Learn fundamentals, composition, and editing for your unique style.",
         "price": 149.99,
         "duration_hours": 8,
@@ -43,20 +49,23 @@
     },
     {
         "title": "Machine Learning A-Z",
+        "id": 7,
         "description": "Dive into machine learning with algorithms, model building, and deep learning. Solve real-world problems.",
         "price": 199.99,
         "duration_hours": 6,
         "img": "https://i.ibb.co/yQwCtgs/img7.png"
     },
     {
-        "title": "Mobile App Development with React Native",
+        "title": "Mobile App Development",
+        "id": 8,
         "description": "Build cross-platform mobile apps with React Native for iOS and Android using a single codebase.",
         "price": 179.99,
         "duration_hours": 4,
         "img": "https://i.ibb.co/xsqrZ3z/img8.png"
     },
     {
-        "title": "Business Finance for Entrepreneurs",
+        "title": "Business Finance",
+        "id": 9,
         "description": "Manage business finances with financial planning, budgeting, and investment strategies for a secure future.",
         "price": 129.99,
         "duration_hours": 1,
