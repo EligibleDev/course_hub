@@ -2,6 +2,7 @@ import './Home.css'
 import { FiDollarSign } from 'react-icons/fi';
 import { BsBook } from 'react-icons/bs';
 import { useEffect, useState } from 'react';
+import Cart from '../Cart/Cart';
 
 const Home = () => {
     const [allCourses, setAllCourses] = useState([])
@@ -40,6 +41,8 @@ const Home = () => {
                     </div>)
                 }
             </div>
+
+            <Cart></Cart>
         </div>
     );
 };

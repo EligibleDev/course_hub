@@ -1,0 +1,42 @@
+.cart{
+    padding: 2rem;
+    border-radius: 1rem;
+    background-color: white;  
+    display: flex;  
+    flex-direction: column;
+    justify-content: start;
+    align-items: start;
+    gap: 1rem;
+    width: 21.5%;
+}
+
+.credit {
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--primary-color);
+}
+
+hr {
+    width: 100%;
+    height: 1px;
+    background: var(--secondary-color);
+}
+
+.cart-title {
+    font-size: 22px;
+    font-weight: 800;
+    color: var(--heading-color);
+}
+
+ol.course-list {
+    margin-left: 20px;
+    color: var(--secondary-color);
+    font-size: 1rem;
+    font-weight: 400;
+}
+
+p.cart-info {
+    font-size: 17px;
+    font-weight: 600;
+    color: var(--secondary-color);
+}
