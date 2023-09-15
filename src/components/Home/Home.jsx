@@ -8,6 +8,8 @@ import Swal from 'sweetalert2';
 const Home = () => {
     const [allCourses, setAllCourses] = useState([]);
     const [selectedCourses, setSelectedCourses] = useState([]);
+    const [totalCredit, setTotalCredit] = useState(0);
+    const [totalRemainingCredit, setTotalRemainingCredit] = useState(0);
 
     useEffect(() => {
         fetch('./data.json')
@@ -24,13 +26,46 @@ const Home = () => {
         })
     }
 
-    const handleSelectCourse = (course) => {
-        const doesExist = selectedCourses.find(item => item.id === course.id);
-        doesExist
-            ? doublePurchaseError()
-            : setSelectedCourses([...selectedCourses, course]);
-        console.log(doesExist);
+    const totalCreditError = () => {
+        Swal.fire({
+            title: 'Error!',
+            text: `Your total credit is going to be greater than 20. And remaining credit is going to be less than 0`,
+            icon: 'error',
+            confirmButtonText: 'Cancel'
+        })
+    }
 
+    // const remainingCreditError = () => {
+    //     Swal.fire({
+    //         title: 'Error!',
+    //         text: "Your total credit is going to be less than 0",
+    //         icon: 'error',
+    //         confirmButtonText: 'Cancel'
+    //     })
+    // }
+
+    const handleSelectCourse = (course) => {
+        let creditCount = course.duration_hours;
+        const doesExist = selectedCourses.find(item => item.id === course.id);
+
+        if (doesExist) {
+            return doublePurchaseError();
+        } else {
+            selectedCourses.forEach(item => {
+                creditCount += item.duration_hours;
+            })
+
+            const remainingCreditCount = 20 - creditCount;
+            console.log(remainingCreditCount);
+
+            setSelectedCourses([...selectedCourses, course]);
+            if (creditCount > 20) {
+                return totalCreditError()
+            }else{
+                setTotalCredit(creditCount);
+                setTotalRemainingCredit(remainingCreditCount);
+            }
+        }
     }
 
 
@@ -61,7 +96,7 @@ const Home = () => {
                 }
             </div>
 
-            <Cart selectedCourses={selectedCourses}></Cart>
+            <Cart remaining={totalRemainingCredit} total={totalCredit} selectedCourses={selectedCourses}></Cart>
         </div>
     );
 };

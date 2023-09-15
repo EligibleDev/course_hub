@@ -2,13 +2,12 @@
 /* eslint-disable react/prop-types */
 import './Cart.css'
 
-const Cart = ({selectedCourses}) => {
+const Cart = ({selectedCourses, remaining, total}) => {
 
-    console.log(selectedCourses)
 
     return (
         <div className="cart">
-            <h2 className='credit'>Remaining Credit: 7hr</h2><hr />
+            <h2 className='credit'>Remaining Credit: {remaining}hr</h2><hr />
 
             <h2 className='cart-title'>Selected Courses</h2>
 
@@ -16,8 +15,7 @@ const Cart = ({selectedCourses}) => {
                 {selectedCourses.map(item => <li key={item.id}>{item.title}</li>)}
             </ol><hr />
 
-            <p className='cart-info'>Total Credit: 13hr</p><hr />
-            <p className='cart-info'>Total Price: $359</p>
+            <p className='cart-info'>Total Credit: {total}hr</p>
         </div>
     );
 };
